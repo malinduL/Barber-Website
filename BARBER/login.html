@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>User Login</title>
+        <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="htpps://fonts.googleapis.com/css?family=Kaushan+Script|Poppin&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    </head>
+    <body>
+        <div class="loginbox">
+            <img src="./images/avataaars.svg" class="avatar" required>
+            <h1>Login Here</h1>
+            <form action="login.php" method="POST" name="login" >
+                <p>UserName</p>
+                <input type="="text" name="user" id="user" placeholder="Enter Username" required>
+                <p>Password</p>
+                <input type="password" name="password" id="password" placeholder="Enter Password" required>
+                <input type="submit" name="submit" value="LOGIN" onclick="return validate();">
+                <a href="www.managepassword">Lost Your Password?</a><br>
+                <a href="./signup.html">Don't have an account?</a>
+            </form>
+            <script>
+                function validate()
+                {
+                    var a = document.getElementById("user").value;
+                    var b = document.getElementById("password").value;
+
+                    if(a=="")
+                    {
+                        alert("User name is can't be Empty");
+                        return false;
+                    }
+        
+                        var letters = /^[A-Za-z]+$/;
+                        if(user.value.match(letters))
+                        {
+                           return true;
+                        }
+                        else
+                        {
+                         alert('Username must have alphabet characters only');
+                         user.focus();
+                         return false;
+                        }
+                    
+                    if(b=="")
+                    {
+                        alert("Please Enter Password");
+                        return false;
+                    }
+                    if(b.length<5)
+                    {
+                        alert("Enter Valid Password");
+                        return false;
+                    }
+                }
+            </script>
+        </div>
+        <section id="banner">
+            <img src="images/logo.png" class="logo"> 
+            <div class="banner-text"></div>
+        </section>
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+            
+            sideNav.style.right = "-250px";
+            
+            menuBtn.onclick = function(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.png";
+                }
+                else{
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/menu.png";
+                } 
+            }
+var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 500,
+	speedAsDuration: true
+});
+        </script>
+    </body>
+</html>
